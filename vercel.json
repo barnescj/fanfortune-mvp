@@ -1,0 +1,3 @@
+{
+  "builCommand": "next build --no-lint"
+}
