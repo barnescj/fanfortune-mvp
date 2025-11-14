@@ -1489,38 +1489,180 @@ margin-top: 0.45rem;
 }
 
 /* =======================================================
-RESPONSIVE BREAKPOINTS
+RESPONSIVE BREAKPOINTS – MOBILE & TABLET ONLY
 ======================================================= */
 
+/* --------- Tablet & small laptop (≤ 900px) --------- */
 @media (max-width: 900px) {
+/* NAVBAR */
+.navbar-inner {
+padding: 0.6rem 1rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 0.4rem;
+}
+
+.navbar-name {
+font-size: 1.15rem;
+}
+
+.navbar-links {
+gap: 0.8rem;
+font-size: 0.85rem;
+flex-wrap: wrap;
+}
+
+/* HERO */
+section.hero {
+padding: 3rem 0 2.2rem;
+}
+
+section.hero > div {
+padding: 0 1rem;
+}
+
+section.hero h1 {
+font-size: 2rem;
+}
+
+section.hero p.lead {
+font-size: 0.98rem;
+max-width: 100%;
+}
+
+.hero-buttons {
+margin-top: 1.2rem;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.hero-small {
+max-width: 100%;
+}
+
+/* HOME – HOW IT WORKS STRIP */
+.how-it-works > div {
+padding: 0 1rem;
+}
+
+.hiw-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1rem;
+}
+
+.hiw-card {
+padding: 0.9rem 1rem;
+}
+
+/* STAR DRAW (HOME) */
+.featured-star {
+padding: 2.3rem 0;
+}
+
 .featured-star-inner {
 grid-template-columns: 1fr;
+padding: 1.6rem 1.4rem;
+gap: 1.4rem;
+}
+
+.featured-star-image img {
+height: 220px;
+object-fit: cover;
+}
+
+.featured-star-title {
+font-size: 1.7rem;
+}
+
+/* RAFFLES GRID (HOME & /raffles) */
+section.raffles > div {
+padding: 0 1rem;
 }
 
 .raffles-grid {
-grid-template-columns: 1fr;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1.25rem;
 }
 
+.raffle-card-banner {
+height: 150px;
+}
+
+/* RAFFLE DETAIL */
 .raffle-detail {
 grid-template-columns: 1fr;
+padding: 0 1rem;
 }
 
+/* ADMIN DEMO */
 .admin-grid {
 grid-template-columns: 1fr;
+padding: 0 1rem;
 }
 
-.entries-header-row {
-display: none;
+/* MY ENTRIES LAYOUT */
+.entries-inner {
+padding: 2.5rem 1rem 0;
 }
 
-.entries-row {
-grid-template-columns: 1.8fr 1fr;
-grid-row-gap: 0.35rem;
-padding: 0.8rem 0.9rem;
+.entries-card {
+padding: 1.7rem 1.4rem 1.8rem;
+}
+
+.entries-header {
+flex-direction: column;
+gap: 1rem;
+align-items: flex-start;
+margin-bottom: 1.4rem;
+}
+
+.entries-stats {
+width: 100%;
+flex-wrap: wrap;
+gap: 0.8rem;
+}
+
+.entries-stat {
+flex: 1 1 30%;
+min-width: 120px;
+align-items: flex-start;
+}
+
+.entries-table-wrapper {
+margin-top: 0.8rem;
+border-radius: 0.9rem;
+overflow-x: auto; /* allow sideways scroll on very small screens */
+}
+
+.entries-table {
+min-width: 650px; /* keeps columns readable */
+}
+
+/* PAST WINNERS */
+.winners-inner {
+padding: 0 1rem;
 }
 
 .winner-card {
 grid-template-columns: 1fr;
+}
+
+/* LIVE DRAW DEMO */
+.live-inner {
+padding: 2.8rem 1rem 0;
+}
+
+.live-card {
+padding: 1.8rem 1.5rem 2rem;
+}
+
+.live-content {
+grid-template-columns: 1fr;
+}
+
+/* HOW IT WORKS PAGE */
+.how-inner {
+padding: 0 1rem;
 }
 
 .how-grid {
@@ -1531,121 +1673,140 @@ grid-template-columns: 1fr;
 grid-template-columns: 1fr;
 }
 
-.hiw-grid {
-grid-template-columns: 1fr 1fr;
-}
-}
-
-@media (max-width: 700px) {
-.navbar-inner {
-padding: 0.65rem 1rem;
-}
-
-.navbar-name {
-font-size: 1.1rem;
-}
-
-.navbar-links {
-gap: 0.7rem;
-font-size: 0.8rem;
-}
-
-.hero-buttons {
-flex-direction: column;
-align-items: flex-start;
-}
-
+/* IMPACT STRIP & FOOTER */
 .impact-inner {
 flex-direction: column;
+gap: 1.3rem;
 }
 
 .footer-main {
 flex-direction: column;
 align-items: flex-start;
+gap: 0.6rem;
 }
 }
 
-/* Make the secondary hero button readable on the dark hero background */
-.hero-buttons .btn-outline {
-border-color: #e5e7eb;
-color: #e5e7eb;
+/* --------- Phones (≤ 600px) --------- */
+@media (max-width: 600px) {
+/* GLOBAL PADDING */
+section.hero > div,
+section.raffles > div,
+.entries-inner,
+.winners-inner,
+.live-inner,
+.how-inner,
+.admin-grid,
+.raffle-detail {
+padding-left: 0.9rem;
+padding-right: 0.9rem;
 }
 
-.hero-buttons .btn-outline:hover {
-background: rgba(248, 250, 252, 0.08);
-border-color: #facc15;
-color: #fefce8;
+/* NAVBAR */
+.navbar-inner {
+padding: 0.55rem 0.9rem;
 }
 
-/* Light Star Draw Highlight Section */
-.star-draw-block {
-background: linear-gradient(to bottom right, #fffdf6, #fef9c3);
-border: 1px solid #facc15;
-border-radius: 1rem;
-padding: 2rem;
-box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+.navbar-links {
+font-size: 0.78rem;
+gap: 0.6rem;
 }
 
-/* Darker text for the light Star Draw section */
-.featured-star-content {
-color: #1f2937; /* dark grey, very readable */
+/* HERO */
+section.hero h1 {
+font-size: 1.7rem;
 }
 
-.featured-star-content h2,
-.featured-star-content .featured-star-title {
-color: #111827; /* almost black */
-font-weight: 700;
+section.hero p.lead {
+font-size: 0.94rem;
 }
 
-.featured-star-content p {
-color: #374151; /* medium-dark grey */
+.btn-primary,
+.btn-outline {
+width: 100%;
+justify-content: center;
 }
 
-.featured-star-badge {
-background: #facc15;
-color: #111827;
-font-weight: 600;
+/* HOW IT WORKS STRIP */
+.hiw-grid {
+grid-template-columns: 1fr;
 }
 
-.featured-star-cta {
-color: #111827 !important; /* text */
-background: #facc15 !important; /* gold btn */
-border: 1px solid #d4af37 !important;
+/* RAFFLES GRID */
+.raffles-grid {
+grid-template-columns: 1fr;
 }
 
-.featured-star-cta:hover {
-background: #fde047 !important; /* lighter gold */
+/* MY ENTRIES */
+.entries-layout {
+padding-bottom: 2rem;
 }
 
-.raffles-page {
-background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
-min-height: 100vh;
-padding-bottom: 3rem;
+.entries-card {
+padding: 1.5rem 1.1rem 1.7rem;
 }
 
-/* Better subtitle text */
-.section-subtitle {
-font-size: 0.95rem;
-color: #374151; /* darker grey, readable */
-margin-bottom: 0.75rem;
+.entries-header h1 {
+font-size: 1.5rem;
 }
 
-/* Pill-style button for the live draw demo link */
-.live-demo-link {
-display: inline-block;
-margin-top: 0.25rem;
-padding: 0.4rem 0.9rem;
-background: #fff8db; /* gold-cream */
-color: #92400e; /* deep gold-brown text */
-border: 1px solid #facc15; /* gold border */
-border-radius: 999px;
-font-size: 0.85rem;
-font-weight: 500;
-text-decoration: none;
-transition: background 0.15s ease, transform 0.12s ease;
+.entries-stats {
+flex-direction: column;
 }
 
-.live-demo-link:hover {
-background: #fde68a; /* brighter gold */
-transform: translateY(-2px); /* small lift */
+.entries-stat {
+width: 100%;
+align-items: flex-start;
+}
+
+.entries-table-wrapper {
+margin-top: 0.9rem;
+}
+
+/* LIVE DRAW */
+.live-video-body {
+height: 190px;
+padding: 1.3rem 1.2rem;
+}
+
+.live-run-button {
+width: 100%;
+justify-content: center;
+}
+
+/* WINNERS */
+.winner-body {
+padding: 1.1rem 1.1rem 1.3rem;
+}
+
+/* FOOTER */
+.site-footer-inner {
+padding: 0 0.9rem;
+}
+}
+
+/* --------- Very small phones (≤ 420px) --------- */
+@media (max-width: 420px) {
+.navbar-links {
+gap: 0.4rem;
+}
+
+.entries-header h1 {
+font-size: 1.35rem;
+}
+
+.entries-table {
+min-width: 620px;
+}
+
+.entries-stat-label {
+font-size: 0.7rem;
+}
+
+.entries-stat-value {
+font-size: 1rem;
+}
+
+.winner-title {
+font-size: 1.1rem;
+}
 }
