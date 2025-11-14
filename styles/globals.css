@@ -1810,3 +1810,100 @@ font-size: 1rem;
 font-size: 1.1rem;
 }
 }
+
+/* Make "How it works" button readable on dark hero */
+.hero-buttons .btn-outline {
+border-color: rgba(248, 250, 252, 0.7);
+background: rgba(15, 23, 42, 0.65);
+color: #f9fafb;
+font-weight: 600;
+}
+
+.hero-buttons .btn-outline:hover {
+background: rgba(15, 23, 42, 0.9);
+border-color: #facc15;
+color: #fefce8;
+}
+
+/* ===== FEATURED STAR DRAW STRIP (HOME) – LIGHT CARD WITH DARK TEXT ===== */
+
+.featured-star {
+padding: 3rem 0;
+background: #fdfcf8; /* light cream */
+}
+
+.featured-star-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+gap: 2rem;
+padding: 2rem;
+border-radius: 1.5rem;
+background: linear-gradient(to bottom right, #fffdf6, #fef9c3);
+border: 1px solid #facc15;
+box-shadow: 0 20px 35px rgba(15, 23, 42, 0.12);
+}
+
+.featured-star-image img {
+width: 100%;
+height: 100%;
+border-radius: 1.25rem;
+object-fit: cover;
+box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+}
+
+/* 🔹 Make all star-draw text dark and readable */
+.featured-star-content {
+color: #111827 !important; /* dark grey/near-black */
+}
+
+.featured-star-content h2,
+.featured-star-title {
+color: #0f172a !important; /* deep navy headline */
+font-weight: 700;
+}
+
+.featured-star-text {
+font-size: 0.98rem;
+color: #374151 !important; /* darker paragraph text */
+margin-bottom: 0.7rem;
+}
+
+.featured-star-meta {
+font-size: 0.9rem;
+color: #4b5563 !important;
+margin-bottom: 1.1rem;
+}
+
+/* Badge + button */
+.featured-star-badge {
+display: inline-block;
+background: #facc15;
+color: #111827;
+font-weight: 600;
+font-size: 0.75rem;
+padding: 0.25rem 0.7rem;
+border-radius: 999px;
+margin-bottom: 0.7rem;
+letter-spacing: 0.08em;
+}
+
+/* The "View Star Draw" button (className="btn-primary featured-star-cta") */
+.featured-star-cta {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.6rem 1.4rem;
+border-radius: 999px;
+border: 1px solid #d4af37;
+background: linear-gradient(to right, #f5c542, #f8a723);
+color: #111827 !important;
+font-weight: 600;
+font-size: 0.9rem;
+box-shadow: 0 10px 24px rgba(245, 197, 66, 0.45);
+}
+
+.featured-star-cta:hover {
+background: linear-gradient(to right, #fde047, #fbbf24);
+}
