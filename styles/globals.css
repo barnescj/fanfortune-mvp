@@ -1,0 +1,1651 @@
+/* ===== FanFortune Theme – Gold + Soft Navy (Full) ===== */
+
+/* ---------- Global reset ---------- */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+html,
+body {
+padding: 0;
+margin: 0;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background: #f3f4f6;
+color: #0d1b2a; /* soft navy for body text */
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button {
+font-family: inherit;
+}
+
+/* ---------- Palette (for reference)
+Gold: #F5C542
+Amber: #F8A723
+Soft navy: #0D1B2A
+Sky blue: #4CA6FF
+Cream: #FDFCF8
+Soft grey: #E8E9EB
+-------------------------------------- */
+
+
+/* =======================================================
+NAVBAR
+======================================================= */
+
+.navbar {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(253, 252, 248, 0.97);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-inner {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0.7rem 1.5rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.navbar-name {
+font-size: 1.3rem;
+font-weight: 700;
+color: #0d1b2a;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+}
+
+.navbar-links {
+display: flex;
+gap: 1.1rem;
+align-items: center;
+font-size: 0.9rem;
+font-weight: 500;
+}
+
+.navbar-links a {
+color: #4b5563;
+position: relative;
+padding-bottom: 2px;
+}
+
+.navbar-links a::after {
+content: "";
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 100%;
+height: 2px;
+background: linear-gradient(to right, #4ca6ff, #f5c542);
+transform: scaleX(0);
+transform-origin: right;
+transition: transform 0.2s ease-out;
+}
+
+.navbar-links a:hover::after {
+transform: scaleX(1);
+transform-origin: left;
+}
+
+
+/* =======================================================
+BUTTONS
+======================================================= */
+
+.btn-primary {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.7rem 1.5rem;
+border-radius: 999px;
+border: none;
+background: linear-gradient(to right, #f5c542, #f8a723);
+color: #0d1b2a;
+font-weight: 600;
+font-size: 0.95rem;
+cursor: pointer;
+box-shadow: 0 10px 25px rgba(245, 197, 66, 0.4);
+transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-primary:hover {
+transform: translateY(-1px);
+filter: brightness(1.03);
+box-shadow: 0 14px 35px rgba(245, 197, 66, 0.5);
+}
+
+.btn-primary:disabled {
+opacity: 0.7;
+cursor: default;
+box-shadow: none;
+transform: none;
+}
+
+.btn-outline {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.6rem 1.3rem;
+border-radius: 999px;
+border: 1px solid #4ca6ff;
+background: transparent;
+color: #0d1b2a;
+font-weight: 500;
+font-size: 0.9rem;
+cursor: pointer;
+transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-outline:hover {
+background: rgba(76, 166, 255, 0.06);
+border-color: #f5c542;
+}
+
+
+/* =======================================================
+HERO (STADIUM)
+======================================================= */
+
+section.hero {
+background-image:
+linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.25)),
+url("/hero.jpg"); /* stadium image in /public */
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: #fdfcf8;
+padding: 4rem 0 3rem;
+}
+
+section.hero > div {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+}
+
+section.hero h1 {
+font-size: 2.4rem;
+margin-bottom: 0.75rem;
+color: #fdfcf8;
+}
+
+section.hero p.lead {
+max-width: 520px;
+font-size: 1.05rem;
+color: #e5e7eb;
+}
+
+.hero-buttons {
+margin-top: 1.5rem;
+display: flex;
+gap: 0.75rem;
+}
+
+.hero-small {
+margin-top: 1rem;
+font-size: 0.85rem;
+max-width: 480px;
+color: #e5e7eb;
+}
+
+
+/* ============================================
+HOME – HOW IT WORKS STRIP (DARK VERSION)
+============================================ */
+
+.how-it-works {
+background: linear-gradient(to bottom, #0f172a, #1e293b);
+padding: 3rem 0 2.5rem;
+border-top: 1px solid #020617;
+}
+
+.how-it-works > div {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+}
+
+.how-it-works h2 {
+margin-bottom: 1.2rem;
+color: #fefce8;
+}
+
+.section-subtitle {
+font-size: 0.9rem;
+color: #cbd5f5; /* lighter blue-grey */
+}
+
+.hiw-grid {
+display: grid;
+gap: 1.25rem;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hiw-card {
+border-radius: 1rem;
+padding: 1rem 1.1rem;
+background: #1f2937; /* dark card */
+border: 1px solid #334155;
+box-shadow: 0 10px 26px rgba(15, 23, 42, 0.4);
+color: #e5e7eb;
+}
+
+.hiw-step-label {
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: #facc15; /* gold “STEP 1” label */
+margin-bottom: 0.35rem;
+}
+
+
+/* =======================================================
+FEATURED STAR DRAW STRIP (HOME)
+======================================================= */
+
+/* Lighter Star Draw section */
+.featured-star {
+padding: 3rem 0;
+background: #fdfcf8; /* light cream so it contrasts with the dark hero */
+}
+
+.featured-star-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+gap: 2rem;
+padding: 2rem;
+border-radius: 1.5rem;
+background: linear-gradient(to bottom right, #fffdf6, #fef9c3);
+border: 1px solid #facc15;
+box-shadow: 0 20px 35px rgba(15, 23, 42, 0.12);
+}
+
+.featured-star-image img {
+width: 100%;
+height: 100%;
+border-radius: 1.25rem;
+object-fit: cover;
+box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+}
+
+.featured-star-content {
+color: #fdfcf8;
+}
+
+.featured-star-badge {
+display: inline-block;
+background: #f5c542;
+color: #0d1b2a;
+font-weight: 700;
+font-size: 0.75rem;
+padding: 0.25rem 0.7rem;
+border-radius: 999px;
+margin-bottom: 0.7rem;
+letter-spacing: 0.08em;
+}
+
+.featured-star-title {
+font-size: 2rem;
+margin: 0 0 0.5rem;
+}
+
+.featured-star-text {
+font-size: 1rem;
+color: #e5e7eb;
+margin-bottom: 0.7rem;
+}
+
+.featured-star-meta {
+font-size: 0.9rem;
+color: #cbd5f5;
+margin-bottom: 1.2rem;
+}
+
+.featured-star-cta {
+margin-top: 0.5rem;
+}
+
+
+/* =======================================================
+RAFFLES (HOME + /raffles)
+======================================================= */
+
+/* Raffles page overall */
+.raffles-page-layout {
+background: radial-gradient(circle at top, #fdfcf8 0%, #f3f4f6 40%, #e5edf7 100%);
+min-height: 100vh;
+}
+
+section.raffles {
+background: linear-gradient(
+to bottom,
+#fdfcf8 0%,
+#f8fafc 40%,
+#f3f4f6 100%
+);
+padding: 2.5rem 0 3rem;
+}
+
+section.raffles > div {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+}
+
+.raffles-grid {
+margin-top: 1.75rem;
+display: grid;
+gap: 1.5rem;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Raffle cards */
+.raffle-card {
+border-radius: 1.1rem;
+overflow: hidden;
+border: 1px solid #e8e9eb;
+background: linear-gradient(to bottom, #fdfcf8 0%, #ffffff 40%, #f9fafb 100%);
+box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+display: flex;
+flex-direction: column;
+transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+border-top: 4px solid #f5c542; /* gold strip for first card */
+}
+
+/* Different top colours for variety */
+.raffle-card:nth-child(2) {
+border-top-color: #4ca6ff; /* blue */
+}
+
+.raffle-card:nth-child(3) {
+border-top-color: #34d399; /* green */
+}
+
+.raffle-card:hover {
+transform: translateY(-2px);
+border-color: #f5c542;
+box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.raffle-card-banner {
+height: 170px;
+overflow: hidden;
+}
+
+.raffle-card-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.raffle-card-body {
+padding: 1rem 1.1rem 1.1rem;
+display: flex;
+flex-direction: column;
+gap: 0.35rem;
+}
+
+.raffle-card-title {
+font-weight: 600;
+font-size: 1.02rem;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 0.3rem;
+}
+
+.star-badge {
+padding: 0.1rem 0.4rem;
+border-radius: 999px;
+font-size: 0.65rem;
+font-weight: 700;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+background: #f5c542;
+color: #0d1b2a;
+}
+
+.raffle-card-desc {
+font-size: 0.9rem;
+color: #4b5563;
+line-height: 1.35;
+}
+
+.raffle-meta {
+font-size: 0.8rem;
+color: #6b7280;
+}
+
+.raffle-price {
+font-size: 0.9rem;
+margin-top: 0.1rem;
+color: #111827;
+}
+
+.raffle-stats {
+font-size: 0.75rem;
+color: #6b7280;
+margin-top: 0.1rem;
+display: flex;
+flex-wrap: wrap;
+gap: 0.35rem;
+}
+
+/* View raffle button (proper gold pill) */
+.raffle-cta {
+margin-top: 0.6rem;
+}
+
+.raffle-cta a {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.45rem 0.95rem;
+border-radius: 999px;
+border: 1px solid #f5c542;
+background: linear-gradient(to right, #f5c542, #f8a723);
+color: #0d1b2a;
+font-size: 0.8rem;
+font-weight: 600;
+text-decoration: none;
+box-shadow: 0 6px 14px rgba(245, 197, 66, 0.35);
+transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.raffle-cta a:hover {
+transform: translateY(-1px);
+filter: brightness(1.03);
+box-shadow: 0 10px 22px rgba(245, 197, 66, 0.5);
+}
+
+
+/* Live draw demo pill (on Raffles page etc.) */
+.link-pill {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.4rem 0.9rem;
+border-radius: 999px;
+border: 1px solid #4ca6ff;
+background: rgba(76, 166, 255, 0.08);
+color: #0d1b2a;
+font-size: 0.8rem;
+font-weight: 600;
+text-decoration: none;
+transition: 0.15s ease;
+}
+
+.link-pill:hover {
+background: #4ca6ff;
+color: #fdfcf8;
+}
+
+
+/* =======================================================
+RAFFLE DETAIL / PURCHASE PAGE
+======================================================= */
+
+.raffle-detail-layout {
+background: #f9fafb;
+min-height: 100vh;
+padding: 3rem 0 4rem;
+}
+
+.raffle-detail {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+gap: 2rem;
+align-items: flex-start;
+}
+
+.raffle-detail-banner {
+border-radius: 1.2rem;
+overflow: hidden;
+border: 1px solid #e5e7eb;
+box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.raffle-detail-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.detail-meta {
+font-size: 0.9rem;
+color: #4b5563;
+margin: 0.25rem 0;
+}
+
+.detail-note {
+font-size: 0.8rem;
+color: #6b7280;
+margin-top: 0.3rem;
+}
+
+.detail-form {
+margin-top: 1rem;
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+}
+
+.detail-form label {
+font-size: 0.8rem;
+display: flex;
+flex-direction: column;
+gap: 0.25rem;
+color: #374151;
+}
+
+.detail-form input {
+border-radius: 0.5rem;
+border: 1px solid #d1d5db;
+padding: 0.5rem 0.6rem;
+background: #ffffff;
+color: #111827;
+font-size: 0.85rem;
+}
+
+
+/* Modal for purchase confirmation */
+
+.modal-backdrop {
+position: fixed;
+inset: 0;
+background: rgba(15, 23, 42, 0.45);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 200;
+}
+
+.modal {
+position: relative;
+background: #ffffff;
+border-radius: 1rem;
+border: 1px solid #e5e7eb;
+padding: 1.75rem 1.5rem 1.5rem;
+max-width: 420px;
+width: 90%;
+box-shadow: 0 22px 60px rgba(15, 23, 42, 0.45);
+}
+
+.modal h2 {
+margin-top: 0;
+margin-bottom: 0.4rem;
+}
+
+.modal-close {
+position: absolute;
+top: 0.6rem;
+right: 0.7rem;
+border: none;
+background: transparent;
+color: #9ca3af;
+font-size: 1.4rem;
+cursor: pointer;
+}
+
+.modal-close:hover {
+color: #4b5563;
+}
+
+
+/* =======================================================
+FOOTER + SAFETY
+======================================================= */
+
+.site-footer {
+background: #0d1b2a;
+border-top: 1px solid #020617;
+padding: 1.25rem 0 1.5rem;
+color: #e5e7eb;
+}
+
+.site-footer-inner {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+font-size: 0.85rem;
+}
+
+.site-footer-inner > div a {
+margin-left: 1rem;
+font-size: 0.8rem;
+color: #e5e7eb;
+}
+
+.footer-main {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 1rem;
+}
+
+.footer-trust {
+margin-top: 0.5rem;
+font-size: 0.75rem;
+color: #cbd5f5;
+}
+
+
+/* =======================================================
+IMPACT STRIP (FUNDS RAISED)
+======================================================= */
+
+.impact-strip {
+background: #fdfcf8;
+border-top: 1px solid #e5e7eb;
+border-bottom: 1px solid #e5e7eb;
+padding: 1.75rem 0;
+}
+
+.impact-inner {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+display: flex;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+.impact-label {
+font-size: 0.75rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: #9ca3af;
+}
+
+.impact-value {
+font-size: 1.4rem;
+font-weight: 700;
+color: #0d1b2a;
+}
+
+
+/* =======================================================
+ADMIN DEMO (CAMPAIGN SETUP)
+======================================================= */
+
+.admin-layout {
+background: #f3f4f6;
+min-height: 100vh;
+color: #0d1b2a;
+padding: 3rem 0 4rem;
+}
+
+.admin-grid {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+gap: 2rem;
+}
+
+.admin-panel,
+.admin-preview {
+background: #ffffff;
+border-radius: 1rem;
+border: 1px solid #e5e7eb;
+padding: 1.5rem;
+box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.admin-form {
+margin-top: 1rem;
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+}
+
+.admin-form label {
+font-size: 0.8rem;
+color: #374151;
+display: flex;
+flex-direction: column;
+gap: 0.25rem;
+}
+
+.admin-form input,
+.admin-form textarea {
+border-radius: 0.5rem;
+border: 1px solid #d1d5db;
+padding: 0.45rem 0.6rem;
+background: #ffffff;
+color: #111827;
+font-size: 0.85rem;
+}
+
+.admin-form textarea {
+min-height: 70px;
+resize: vertical;
+}
+
+.admin-empty {
+margin-top: 1rem;
+padding: 1rem;
+border-radius: 0.75rem;
+border: 1px dashed #d1d5db;
+background: #f9fafb;
+font-size: 0.85rem;
+color: #6b7280;
+}
+
+
+/* =======================================================
+MY ENTRIES (DASHBOARD)
+======================================================= */
+
+body {
+background: #020617;
+}
+
+/* ============================================
+MY ENTRIES — UPDATED VERSION
+============================================ */
+
+.entries-layout {
+min-height: 100vh;
+padding-bottom: 3rem;
+
+/* 🔵 very obvious gradient */
+background: linear-gradient(
+180deg,
+#ffffff 0%,
+#ffffff 20%,
+#ffffff 50%,
+#ffffff 80%,
+#020617 100%
+) !important;
+
+/* make sure no flat colour wins */
+background-color: transparent !important;
+}
+
+.entries-inner {
+max-width: 1100px;
+margin: 0 auto;
+padding: 3.5rem 1.5rem 0;
+}
+
+.entries-card {
+background: #f8fafc;
+border-radius: 1.25rem;
+box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+padding: 2.1rem 2rem 2.2rem;
+border: 1px solid #e2e8f0;
+}
+
+/* ================= HEADER ================= */
+
+.entries-header {
+display: flex;
+justify-content: space-between;
+gap: 2rem;
+align-items: flex-start;
+margin-bottom: 1.8rem;
+}
+
+@media (max-width: 900px) {
+.entries-header {
+flex-direction: column;
+}
+}
+
+.entries-header h1 {
+margin: 0 0 0.4rem;
+font-size: 1.8rem;
+color: #0f172a;
+}
+
+.entries-header p {
+margin: 0;
+font-size: 0.92rem;
+color: #475569;
+}
+
+/* ============== STAT BOXES ============== */
+
+.entries-stats {
+display: flex;
+gap: 1.2rem;
+}
+
+@media (max-width: 600px) {
+.entries-stats {
+width: 100%;
+justify-content: space-between;
+}
+}
+
+/* all three stats same height & centred */
+.entries-stat {
+padding: 0.75rem 1rem;
+border-radius: 0.9rem;
+min-width: 130px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+border: 2px solid rgba(255,255,255,0.18);
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+/* Total entries → deep navy */
+.entries-stat--total {
+background: #1e3a8a;
+border-color: #3b82f6;
+color: #ffffff;
+}
+
+/* Open raffles → bright blue */
+.entries-stat--open {
+background: #0ea5e9;
+border-color: #38bdf8;
+color: #ffffff;
+}
+
+/* Wins → deeper amber so white text works */
+.entries-stat--wins {
+background: #b45309; /* rich amber */
+border-color: #f59e0b;
+color: #fefce8; /* off-white */
+}
+
+.entries-stat-label {
+display: block;
+font-size: 0.75rem;
+opacity: 0.9;
+text-transform: uppercase;
+letter-spacing: 0.07em;
+}
+
+.entries-stat-value {
+display: block;
+margin-top: 0.15rem;
+font-size: 1.15rem;
+font-weight: 700;
+}
+
+/* ============== TABLE WRAPPER ============== */
+
+.entries-table-wrapper {
+border-radius: 1rem;
+overflow: hidden;
+border: 1px solid #d1d5db;
+background: #ffffff;
+margin-top: 1rem;
+}
+
+.entries-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 0.9rem;
+}
+
+.entries-table thead {
+background: #0f172a;
+color: #e5e7eb;
+}
+
+.entries-table th,
+.entries-table td {
+padding: 1rem 1.15rem;
+text-align: left;
+}
+
+.entries-table th {
+font-size: 0.8rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+border-bottom: 1px solid #1f2937;
+}
+
+.entries-table tbody tr:nth-child(even) {
+background: #f9fafb;
+}
+
+.entries-table tbody tr:nth-child(odd) {
+background: #ffffff;
+}
+
+/* Raffle column */
+
+.entries-raffle-cell {
+min-width: 240px;
+}
+
+.entries-raffle-name {
+font-weight: 600;
+color: #0f172a;
+}
+
+.entries-prize-label {
+margin-top: 0.2rem;
+font-size: 0.78rem;
+color: #b45309;
+}
+
+/* ============== STATUS PILLS ============== */
+
+.status-pill {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.28rem 0.75rem;
+border-radius: 999px;
+font-size: 0.78rem;
+font-weight: 500;
+}
+
+.status-pill--open {
+background: rgba(59, 130, 246, 0.12);
+color: #1d4ed8;
+}
+
+.status-pill--lost {
+background: rgba(148, 163, 184, 0.18);
+color: #475569;
+}
+
+.status-pill--won-main {
+background: rgba(34, 197, 94, 0.15);
+color: #15803d;
+}
+
+.status-pill--won-tier2 {
+background: rgba(250, 204, 21, 0.15);
+color: #b45309;
+}
+
+.status-pill--won-tier3 {
+background: rgba(59, 130, 246, 0.15);
+color: #1e40af;
+}
+
+/* ============== VIEW RAFFLE BUTTON ============== */
+
+.entries-view-cell {
+text-align: right;
+}
+
+.btn-secondary {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.45rem 0.9rem;
+border-radius: 999px;
+font-size: 0.8rem;
+font-weight: 600;
+border: 1px solid #c7d2fe;
+background: #eef2ff;
+color: #1e3a8a;
+text-decoration: none;
+white-space: nowrap; /* keeps "View raffle" on one line */
+transition: all 0.15s ease;
+}
+
+.btn-secondary:hover {
+background: #e0e7ff;
+box-shadow: 0 4px 12px rgba(129, 140, 248, 0.35);
+}
+
+/* ============== FOOTNOTE ============== */
+
+.entries-footnote {
+margin-top: 1rem;
+font-size: 0.78rem;
+color: #6b7280;
+text-align: left;
+}
+
+/* =======================================================
+PAST WINNERS
+======================================================= */
+
+.winners-layout {
+min-height: 100vh;
+background: radial-gradient(circle at top, #e0f2fe 0%, #f3f4f6 40%, #e5edf7 100%);
+color: #0d1b2a;
+padding: 3rem 0 4rem;
+}
+
+.winners-inner {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+}
+
+.winners-grid {
+margin-top: 2rem;
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+
+.winner-card {
+display: grid;
+grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+gap: 1.5rem;
+border-radius: 1rem;
+border: 1px solid #e5e7eb;
+background: #ffffff;
+box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+overflow: hidden;
+}
+
+.winner-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.winner-body {
+padding: 1.25rem 1.25rem 1.4rem;
+}
+
+.winner-badge {
+display: inline-block;
+background: #e0f2fe;
+color: #1d4ed8;
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+padding: 0.2rem 0.6rem;
+border-radius: 999px;
+margin-bottom: 0.5rem;
+}
+
+.winner-title {
+font-size: 1.25rem;
+margin: 0 0 0.35rem;
+}
+
+.winner-meta {
+font-size: 0.85rem;
+color: #4b5563;
+margin: 0.2rem 0;
+}
+
+.winner-charity {
+font-size: 0.85rem;
+color: #b45309;
+margin-top: 0.6rem;
+}
+
+.winner-actions {
+margin-top: 1rem;
+}
+
+
+/* =======================================================
+LIVE DRAW DEMO
+======================================================= */
+
+.live-layout {
+min-height: 100vh;
+background: radial-gradient(circle at top, #020617 0%, #020617 40%, #0b1120 80%);
+color: #e5e7eb;
+padding-bottom: 3rem;
+}
+
+.live-inner {
+max-width: 1100px;
+margin: 0 auto;
+padding: 3.5rem 1.5rem 0;
+}
+
+.live-card {
+background: #020617;
+border-radius: 1.25rem;
+box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+padding: 2.2rem 2rem 2.3rem;
+}
+
+.live-card-header h1 {
+font-size: 1.9rem;
+margin-bottom: 0.6rem;
+color: #fefce8;
+}
+
+.live-card-header p {
+font-size: 0.95rem;
+color: #cbd5e1;
+max-width: 720px;
+}
+
+/* Layout: video on left, meta on right */
+
+.live-content {
+display: grid;
+grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+gap: 1.8rem;
+margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+.live-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Fake video frame */
+
+.live-video {
+position: relative;
+background: radial-gradient(circle at top, #1f2937, #020617);
+border-radius: 1.1rem;
+padding: 1.4rem 1.5rem 1.6rem;
+overflow: hidden;
+border: 1px solid #111827;
+box-shadow: inset 0 0 40px rgba(15, 23, 42, 0.8);
+}
+
+.live-badge {
+position: absolute;
+top: 1rem;
+left: 1.1rem;
+padding: 0.2rem 0.7rem;
+border-radius: 999px;
+font-size: 0.75rem;
+font-weight: 600;
+background: #ef4444;
+color: #fef2f2;
+}
+
+.live-viewers {
+position: absolute;
+top: 1rem;
+right: 1.1rem;
+padding: 0.2rem 0.7rem;
+border-radius: 999px;
+font-size: 0.75rem;
+background: rgba(15, 23, 42, 0.75);
+color: #e5e7eb;
+}
+
+.live-video-body {
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 220px;
+border-radius: 0.9rem;
+background: radial-gradient(circle at center, #0ea5e9 0%, #020617 65%);
+padding: 1.5rem 1.6rem;
+}
+
+.live-video-label {
+font-size: 0.9rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: #cffafe;
+margin-bottom: 0.35rem;
+}
+
+.live-video-sub {
+font-size: 0.95rem;
+color: #e5e7eb;
+max-width: 420px;
+}
+
+/* Meta + button */
+
+.live-meta h2 {
+font-size: 1.1rem;
+margin-bottom: 0.4rem;
+color: #fefce8;
+}
+
+.live-meta-small {
+font-size: 0.85rem;
+color: #cbd5e1;
+margin-bottom: 0.15rem;
+}
+
+.live-run-button {
+margin-top: 1.3rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.75rem 1.4rem;
+border-radius: 999px;
+border: none;
+outline: none;
+background: linear-gradient(to right, #facc15, #f97316);
+color: #111827;
+font-weight: 600;
+font-size: 0.95rem;
+cursor: pointer;
+box-shadow: 0 14px 30px rgba(248, 181, 0, 0.35);
+transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.15s ease;
+}
+
+.live-run-button:hover:not(:disabled) {
+transform: translateY(-1px);
+box-shadow: 0 18px 36px rgba(248, 181, 0, 0.45);
+}
+
+.live-run-button:disabled {
+opacity: 0.8;
+cursor: default;
+}
+
+/* “Spin” effect while drawing */
+
+.live-run-button--spinning {
+animation: live-spin 0.7s linear infinite;
+}
+
+@keyframes live-spin {
+0% {
+transform: translateY(0) rotate(0deg);
+}
+50% {
+transform: translateY(-1px) rotate(1.5deg);
+}
+100% {
+transform: translateY(0) rotate(-1.5deg);
+}
+}
+
+.live-disclaimer {
+margin-top: 0.9rem;
+font-size: 0.8rem;
+color: #9ca3af;
+}
+
+/* MULTI-TIER WINNERS */
+
+.live-winners {
+margin-top: 2.2rem;
+padding: 1.6rem 1.5rem 1.5rem;
+border-radius: 1rem;
+background: #020617;
+border: 1px solid #facc15;
+}
+
+.live-winners-main {
+padding: 1rem 1.1rem 1.2rem;
+border-radius: 0.9rem;
+background: radial-gradient(circle at top left, #0f172a, #020617);
+border: 1px solid rgba(250, 204, 21, 0.5);
+margin-bottom: 1.5rem;
+}
+
+.live-winner-badge {
+display: inline-block;
+padding: 0.15rem 0.65rem;
+border-radius: 999px;
+font-size: 0.75rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+margin-bottom: 0.4rem;
+}
+
+.live-winner-badge--main {
+background: rgba(250, 204, 21, 0.12);
+color: #facc15;
+}
+
+.live-winners-main h3 {
+margin: 0 0 0.2rem;
+font-size: 1.05rem;
+color: #fefce8;
+}
+
+.live-winner-prize {
+margin: 0 0 0.15rem;
+font-size: 0.9rem;
+color: #e5e7eb;
+}
+
+.live-winner-id,
+.live-winner-location {
+margin: 0;
+font-size: 0.85rem;
+color: #cbd5e1;
+}
+
+/* Tier 2 / Tier 3 columns */
+
+.live-winners-columns {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1.5rem;
+margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+.live-winners-columns {
+grid-template-columns: 1fr;
+}
+}
+
+.live-winners-column h4 {
+margin: 0 0 0.5rem;
+font-size: 0.95rem;
+color: #fefce8;
+}
+
+.live-winners-column ul {
+margin: 0;
+padding-left: 1.1rem;
+list-style: disc;
+}
+
+.live-winners-column li {
+font-size: 0.86rem;
+color: #e5e7eb;
+margin-bottom: 0.25rem;
+}
+
+.live-winner-name {
+font-weight: 500;
+}
+
+.live-winner-meta {
+opacity: 0.85;
+}
+
+.live-winners-note {
+margin-top: 1.2rem;
+font-size: 0.8rem;
+color: #9ca3af;
+}
+
+/* =======================================================
+HOW IT WORKS PAGE (INVESTOR VIEW)
+======================================================= */
+
+.how-layout {
+min-height: 100vh;
+background: radial-gradient(circle at top, #0f172a 0%, #111827 60%);
+padding: 3.5rem 0 5rem;
+color: #e5e7eb;
+}
+
+.how-inner {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 1.5rem;
+}
+
+.how-inner h1 {
+font-size: 2.1rem;
+margin-bottom: 0.4rem;
+color: #fefce8;
+}
+
+.detail-note {
+font-size: 0.9rem;
+color: #cbd5e1;
+margin-top: 0.3rem;
+}
+
+/* ---------------- TOP ROW (1–4 STEPS) — DARK ---------------- */
+
+.how-grid {
+margin-top: 2rem;
+display: grid;
+gap: 1.6rem;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+.how-grid {
+grid-template-columns: 1fr;
+}
+}
+
+.how-card {
+background: #1e293b; /* Dark slate */
+border: 1px solid #334155; /* Subtle dark border */
+border-radius: 1rem;
+padding: 1.6rem 1.8rem;
+box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+color: #f1f5f9;
+}
+
+.how-card h2 {
+margin-top: 0;
+margin-bottom: 0.55rem;
+font-size: 1.15rem;
+color: #fefce8;
+}
+
+.how-card p {
+color: #e2e8f0;
+font-size: 0.95rem;
+line-height: 1.45;
+}
+
+/* ---------------- BOTTOM ROW (INVESTORS) ---------------- */
+
+.how-investors {
+margin-top: 3.5rem;
+}
+
+.how-investors h2 {
+color: #fefce8;
+}
+
+.how-investors-grid {
+margin-top: 2rem;
+display: grid;
+gap: 1.6rem;
+grid-template-columns: repeat(3, minmax(0,1fr));
+}
+
+@media (max-width: 900px) {
+.how-investors-grid {
+grid-template-columns: 1fr;
+}
+}
+
+.how-investors-card {
+background: #f7f7f5; /* Light neutral background */
+border: 2px solid #facc15; /* Gold border */
+border-radius: 1rem;
+padding: 1.5rem 1.6rem 1.7rem;
+color: #1e293b;
+box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+}
+
+.how-investors-card h3 {
+margin-top: 0;
+margin-bottom: 0.7rem;
+font-size: 1rem;
+color: ;
+}
+
+.how-investors-card ul {
+margin: 0;
+padding-left: 1.1rem;
+list-style: disc;
+font-size: 0.92rem;
+color: #334155;
+}
+
+.how-investors-card li + li {
+margin-top: 0.45rem;
+}
+
+/* =======================================================
+RESPONSIVE BREAKPOINTS
+======================================================= */
+
+@media (max-width: 900px) {
+.featured-star-inner {
+grid-template-columns: 1fr;
+}
+
+.raffles-grid {
+grid-template-columns: 1fr;
+}
+
+.raffle-detail {
+grid-template-columns: 1fr;
+}
+
+.admin-grid {
+grid-template-columns: 1fr;
+}
+
+.entries-header-row {
+display: none;
+}
+
+.entries-row {
+grid-template-columns: 1.8fr 1fr;
+grid-row-gap: 0.35rem;
+padding: 0.8rem 0.9rem;
+}
+
+.winner-card {
+grid-template-columns: 1fr;
+}
+
+.how-grid {
+grid-template-columns: 1fr;
+}
+
+.how-investors-grid {
+grid-template-columns: 1fr;
+}
+
+.hiw-grid {
+grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (max-width: 700px) {
+.navbar-inner {
+padding: 0.65rem 1rem;
+}
+
+.navbar-name {
+font-size: 1.1rem;
+}
+
+.navbar-links {
+gap: 0.7rem;
+font-size: 0.8rem;
+}
+
+.hero-buttons {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.impact-inner {
+flex-direction: column;
+}
+
+.footer-main {
+flex-direction: column;
+align-items: flex-start;
+}
+}
+
+/* Make the secondary hero button readable on the dark hero background */
+.hero-buttons .btn-outline {
+border-color: #e5e7eb;
+color: #e5e7eb;
+}
+
+.hero-buttons .btn-outline:hover {
+background: rgba(248, 250, 252, 0.08);
+border-color: #facc15;
+color: #fefce8;
+}
+
+/* Light Star Draw Highlight Section */
+.star-draw-block {
+background: linear-gradient(to bottom right, #fffdf6, #fef9c3);
+border: 1px solid #facc15;
+border-radius: 1rem;
+padding: 2rem;
+box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+}
+
+/* Darker text for the light Star Draw section */
+.featured-star-content {
+color: #1f2937; /* dark grey, very readable */
+}
+
+.featured-star-content h2,
+.featured-star-content .featured-star-title {
+color: #111827; /* almost black */
+font-weight: 700;
+}
+
+.featured-star-content p {
+color: #374151; /* medium-dark grey */
+}
+
+.featured-star-badge {
+background: #facc15;
+color: #111827;
+font-weight: 600;
+}
+
+.featured-star-cta {
+color: #111827 !important; /* text */
+background: #facc15 !important; /* gold btn */
+border: 1px solid #d4af37 !important;
+}
+
+.featured-star-cta:hover {
+background: #fde047 !important; /* lighter gold */
+}
+
+.raffles-page {
+background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+min-height: 100vh;
+padding-bottom: 3rem;
+}
+
+/* Better subtitle text */
+.section-subtitle {
+font-size: 0.95rem;
+color: #374151; /* darker grey, readable */
+margin-bottom: 0.75rem;
+}
+
+/* Pill-style button for the live draw demo link */
+.live-demo-link {
+display: inline-block;
+margin-top: 0.25rem;
+padding: 0.4rem 0.9rem;
+background: #fff8db; /* gold-cream */
+color: #92400e; /* deep gold-brown text */
+border: 1px solid #facc15; /* gold border */
+border-radius: 999px;
+font-size: 0.85rem;
+font-weight: 500;
+text-decoration: none;
+transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.live-demo-link:hover {
+background: #fde68a; /* brighter gold */
+transform: translateY(-2px); /* small lift */
+}
